@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS nodes (
+	id serial PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	"left" NUMERIC NOT NULL,
+	"right" NUMERIC NOT NULL,
+    tree_id VARCHAR(255) NOT NULL
+);
