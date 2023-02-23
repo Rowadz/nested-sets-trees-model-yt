@@ -1,5 +1,7 @@
--- * update all of the right values of the nodes where the right is bigger than the parent’s left
--- * update all of the left values of the nodes where the left is bigger than the parent’s left
+-- update all of the right values of the nodes where the right is bigger than the parent’s left  by 2
+-- update all of the left values of the nodes where the left is bigger than the parent’s left  by 2
+-- the new node left value will be the parent’s left + 1
+-- the new node right value will be the parent’s right + 2
 CREATE OR REPLACE  PROCEDURE add_child(
     perent_id NUMERIC,
     node_name VARCHAR(50)
