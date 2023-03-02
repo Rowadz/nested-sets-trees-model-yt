@@ -1,19 +1,19 @@
--- to delete a branch
+-- to delete a node and uplift its descendants
 -- ! find the node's left and right values
 -- ! delete the node by filtering on the left value
--- ! to update the children:
+-- ! to uplift the descendants:
 --      ! update the right values in the tree to be right - 1 and left to be left - 1 where their left is between the deleted node's left and right
 -- ! update the right values in the tree to be right - 2 where their right is bigger than the deleted node's right
 -- ! update the left values in the tree to be left - 2 where their left is bigger than the deleted node's right
 
-CREATE OR REPLACE  PROCEDURE delete_node_and_uplift_the_parent(
+CREATE OR REPLACE  PROCEDURE delete_node_and_uplift_the_descendants(
     node_id NUMERIC
 )
 language plpgsql
 AS $$
 DECLARE 
     node_left NUMERIC;
-    node_right NUMERIC;
+    node_right NUMERIC; 
     tree_id_ VARCHAR(255);
 BEGIN 
     SELECT 
@@ -26,8 +26,7 @@ BEGIN
         tree_id_
     FROM nodes WHERE "id" = node_id;
 
-    DELETE FROM nodes WHERE "left" = node_left
-    AND nodes.tree_id = tree_id_;
+    DELETE FROM nodes WHERE "id" = node_id;
 
     -- update the children
     UPDATE nodes 
