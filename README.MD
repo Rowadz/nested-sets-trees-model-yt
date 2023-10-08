@@ -1,6 +1,6 @@
 # Nested sets trees (youtube code)
 
-The graph in the video:
+The graph in the videos:
 
 ```mermaid
 stateDiagram-v2
