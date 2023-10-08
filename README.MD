@@ -1,5 +1,18 @@
 # Nested sets trees (youtube code)
 
+The graph in the video:
+
+```mermaid
+stateDiagram-v2
+    1/14 --> 2/9
+    1/14 --> 10/13
+    2/9 --> 3/4
+    2/9 --> 5/6
+    2/9 --> 7/8
+    10/13 --> 11/12
+```
+
+
 <img src="./thumbnail.png" />
 
 - [Starting video](https://youtu.be/MJIosbfiUs4)
